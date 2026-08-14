@@ -43,8 +43,8 @@ export function Footer() {
   return (
     <footer className="bg-ink pt-20 pb-10 text-white">
       <Container>
-        <div className="grid items-start gap-10 lg:grid-cols-[1.15fr_repeat(4,minmax(0,0.85fr))_1.25fr] lg:gap-x-0">
-          <div className="flex justify-center lg:pr-12">
+        <div className="grid grid-cols-2 items-start gap-x-8 gap-y-10 lg:grid-cols-[1.15fr_repeat(4,minmax(0,0.85fr))_1.25fr] lg:gap-x-0">
+          <div className="col-span-2 flex justify-center lg:col-span-1 lg:pr-12">
             <Logo className="flex-col items-center gap-3 text-center" />
           </div>
           {columns.map((col, i) => (
@@ -56,7 +56,7 @@ export function Footer() {
                 (i === 1 || i === 2) && "lg:border-l lg:border-line-on-ink",
               )}
             >
-              <p className="mb-5 text-[13px] font-medium uppercase tracking-[0.18em] text-white">
+              <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.18em] text-white lg:mb-5">
                 {col.title}
               </p>
               <ul className="space-y-2.5">
@@ -73,7 +73,7 @@ export function Footer() {
               </ul>
             </div>
           ))}
-          <div className="lg:pl-8">
+          <div className="col-span-2 lg:col-span-1 lg:pl-8">
             <NewsletterForm />
             <div className="mt-6 flex items-center gap-4">
               <SocialIcon label="Facebook">
@@ -91,7 +91,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line-on-ink pt-6 text-[14px] text-white/45">
+        <div className="mt-12 flex flex-col items-center gap-3 border-t border-line-on-ink pt-6 text-center text-[14px] text-white/45 lg:mt-16 lg:flex-row lg:items-center lg:justify-between lg:text-left">
           <p>© 2026 Martingale Estate. All rights reserved.</p>
           <div className="flex items-center gap-3">
             <Link href="/privacy" className="transition-colors duration-300 hover:text-gold">

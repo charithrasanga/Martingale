@@ -57,6 +57,16 @@
   --font-serif: var(--font-cormorant);
 }
 
+html {
+  scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px) + 15px);
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: calc(5.5rem + env(safe-area-inset-top, 0px) + 156px);
+  }
+}
+
 html,
 body {
   background: var(--paper);
@@ -111,14 +121,14 @@ body {
   }
 }
 
-@keyframes scroll-pulse {
+@keyframes scroll-bounce {
   0%,
   100% {
-    opacity: 0.5;
+    transform: translateY(0);
   }
 
   50% {
-    opacity: 0.9;
+    transform: translateY(6px);
   }
 }
 
@@ -137,8 +147,15 @@ html.js .reveal-list.reveal-load {
   animation-duration: var(--motion-duration-stagger);
 }
 
-.scroll-line {
-  animation: scroll-pulse 2s ease-in-out infinite;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.scroll-cue {
+  display: flex;
+  animation: scroll-bounce 1.6s ease-in-out infinite;
 }
 
 .hero-volume {
@@ -199,7 +216,7 @@ html.js .reveal-list.reveal-load {
     animation: none;
   }
 
-  .scroll-line {
+  .scroll-cue {
     animation: none;
   }
 }

@@ -38,7 +38,7 @@ export function Header() {
             wordmarkClassName="text-[14px] tracking-[0.12em] sm:text-[16px] sm:tracking-[0.14em]"
           />
           <nav
-            className="hidden items-center justify-self-end gap-10 pr-12 lg:flex"
+            className="hidden items-center justify-self-end gap-7 pr-12 lg:flex xl:gap-10"
             aria-label="Primary"
           >
             {NAV.map((item) => {

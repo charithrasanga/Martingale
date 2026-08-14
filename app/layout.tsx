@@ -3,6 +3,7 @@ import { Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="detect-js" strategy="beforeInteractive">
           {`document.documentElement.classList.add("js")`}
         </Script>
+        <ScrollToTop />
         <Header />
         <main>{children}</main>
         <Footer />

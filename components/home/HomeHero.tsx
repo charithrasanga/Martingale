@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { HeroMedia } from "@/components/home/HeroMedia";
+import { ScrollIndicator } from "@/components/home/ScrollIndicator";
 import { Reveal } from "@/components/ui/Reveal";
 import { slot } from "@/lib/images";
 
@@ -36,15 +37,7 @@ export function HomeHero() {
           </Reveal>
         </div>
       </Container>
-      <div
-        className="absolute bottom-10 left-6 lg:left-12"
-        aria-hidden
-      >
-        <p className="text-[12px] font-medium uppercase tracking-[0.24em] text-white/70">
-          Scroll
-        </p>
-        <span className="scroll-line mt-3 block h-12 w-px bg-white/50 motion-reduce:animate-none" />
-      </div>
+      <ScrollIndicator />
     </section>
   );
 }

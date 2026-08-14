@@ -11,7 +11,7 @@ export function StorySection() {
   const barrels = slot("storyBarrels");
 
   return (
-    <section className="bg-paper-warm py-16 lg:py-20">
+    <section id="our-story" className="bg-paper-warm py-16 lg:py-20">
       <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
         <Reveal className="lg:col-span-5">
           <SectionLabel rule="right">Our story</SectionLabel>
