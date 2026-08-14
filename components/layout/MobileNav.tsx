@@ -81,15 +81,23 @@ export function MobileNav({
           const active =
             pathname === item.href ||
             (item.href === "/estate" && pathname.startsWith("/estate"));
+          const className = cn(
+            "flex min-h-12 w-full cursor-pointer items-center border-b border-line-on-ink bg-transparent p-0 text-left text-[18px] font-medium uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:text-gold-bright",
+            active && "text-gold-bright",
+          );
+          if (!item.live) {
+            return (
+              <button key={item.href} type="button" className={className}>
+                {item.label}
+              </button>
+            );
+          }
           return (
             <Link
               key={item.href}
               href={item.href}
               onClick={onClose}
-              className={cn(
-                "flex min-h-12 items-center border-b border-line-on-ink text-[18px] font-medium uppercase tracking-[0.16em] text-white transition-colors duration-300 hover:text-gold-bright",
-                active && "text-gold-bright",
-              )}
+              className={className}
             >
               {item.label}
             </Link>

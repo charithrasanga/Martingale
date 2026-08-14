@@ -45,15 +45,19 @@ export function Header() {
               const active =
                 pathname === item.href ||
                 (item.href === "/estate" && pathname.startsWith("/estate"));
+              const className = cn(
+                "cursor-pointer bg-transparent p-0 text-[15px] font-medium uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:text-gold-bright hover:underline hover:decoration-gold-bright hover:underline-offset-[10px]",
+                active && "text-gold-bright underline decoration-gold-bright underline-offset-[10px]",
+              );
+              if (!item.live) {
+                return (
+                  <button key={item.href} type="button" className={className}>
+                    {item.label}
+                  </button>
+                );
+              }
               return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "text-[15px] font-medium uppercase tracking-[0.14em] text-white transition-colors duration-300 hover:text-gold-bright hover:underline hover:decoration-gold-bright hover:underline-offset-[10px]",
-                    active && "text-gold-bright underline decoration-gold-bright underline-offset-[10px]",
-                  )}
-                >
+                <Link key={item.href} href={item.href} className={className}>
                   {item.label}
                 </Link>
               );

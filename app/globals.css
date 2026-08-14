@@ -25,8 +25,7 @@
   --line-on-ink: rgb(247 245 242 / 0.14);
   --hero-overlay: rgb(24 23 17 / 0.38);
   --header-glass: rgb(24 23 17 / 0.45);
-  --type-shadow: 0 1px 0 rgb(24 23 17 / 0.85), 0 1px 2px rgb(24 23 17 / 0.6),
-    0 2px 4px rgb(24 23 17 / 0.45);
+  --type-shadow: 1px 1px 2px rgb(0 0 0 / 0.1);
   --type-shadow-nav: 0 1px 0 rgb(24 23 17 / 0.7), 0 1px 1px rgb(24 23 17 / 0.45);
   --type-shadow-nav-hover: 0 1px 0 rgb(24 23 17 / 0.85), 0 1px 1px rgb(24 23 17 / 0.55);
   --card-shadow: 0 8px 24px rgb(24 23 17 / 0.08);
