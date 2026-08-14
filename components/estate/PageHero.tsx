@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { slot } from "@/lib/images";
 
 export function PageHero() {
   const image = slot("estateHero");
 
   return (
-    <section className="relative min-h-[70vh]">
+    <section className="type-shadow relative h-[320px] overflow-hidden lg:h-[480px]">
       <Image
         src={image.src}
         alt={image.alt}
@@ -15,16 +16,21 @@ export function PageHero() {
         className="object-cover object-center"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-hero-overlay" />
-      <Container className="type-shadow relative flex min-h-[70vh] items-end pb-20 pt-28">
+      <div className="absolute inset-0 bg-linear-to-r from-hero-overlay via-hero-overlay/70 to-transparent" />
+      <Container className="relative flex h-full items-center pt-16 lg:pt-10">
         <div className="max-w-lg">
-          <h1 className="font-display text-[36px] font-medium leading-[1.08] text-white lg:text-[56px]">
-            The Vineyard
-          </h1>
-          <p className="mt-6 text-[17px] leading-[1.7] text-white/85">
-            Forty acres in the Yarra Valley — slope, valley floor, and a slow
-            unfolding of Pinot and Chardonnay under cool air and long light.
-          </p>
+          <Reveal trigger="load">
+            <h1 className="type-shadow font-display text-[36px] font-medium leading-[1.08] tracking-tight text-white lg:text-[56px]">
+              The Vineyard
+            </h1>
+          </Reveal>
+          <Reveal trigger="load" delay={80}>
+            <p className="type-shadow mt-6 text-[17px] leading-[1.7] text-white/85">
+              Our vineyard spans 40 acres in the heart of the Yarra Valley. Cool
+              climate, ancient soils and uncompromising care come together to
+              create wines of structure, elegance and depth.
+            </p>
+          </Reveal>
         </div>
       </Container>
     </section>

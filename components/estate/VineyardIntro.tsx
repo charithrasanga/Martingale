@@ -1,40 +1,54 @@
 import { Container } from "@/components/ui/Container";
+import { CountUp } from "@/components/ui/CountUp";
+import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const stats = [
-  { value: "40", label: "Acres" },
-  { value: "20", label: "Acres under vine" },
-  { value: "5", label: "Varietals" },
-  { value: "100%", label: "Hand harvested" },
+  { end: 40, suffix: "", lines: ["Acres"] },
+  { end: 20, suffix: "", lines: ["Acres under", "vine"] },
+  { end: 5, suffix: "", lines: ["Varietals"] },
+  { end: 100, suffix: "%", lines: ["Hand", "harvested"] },
 ];
 
 export function VineyardIntro() {
   return (
-    <section className="bg-cream py-24">
-      <Container className="grid items-center gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+    <section className="bg-cream py-16">
+      <Container className="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+        <Reveal className="lg:col-span-5">
           <SectionLabel>Our vineyard</SectionLabel>
-          <h2 className="font-display text-[32px] font-medium text-ink lg:text-[40px]">
+          <h2 className="font-display text-[28px] font-medium leading-[1.15] text-ink lg:text-[40px]">
             The Yarra Valley
           </h2>
-          <p className="mt-6 text-[17px] leading-[1.7] text-ink-muted">
-            Morning mist on the rows, a thin band of clay and grey loam, and
-            fruit we pick ourselves. The vineyard is small on purpose.
+          <p className="mt-8 max-w-md text-[17px] leading-[1.7] text-ink-muted">
+            Our vineyard spans 40 acres in the heart of the Yarra Valley. Cool
+            climate, ancient soils and uncompromising care come together to
+            create wines of structure, elegance and depth.
           </p>
-        </div>
-        <div className="grid grid-cols-2 gap-y-8 lg:col-span-7 lg:grid-cols-4">
+        </Reveal>
+        <div className="grid grid-cols-2 gap-y-8 self-center lg:col-span-7 lg:grid-cols-4 lg:gap-y-0">
           {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className={`px-4 ${i > 0 ? "lg:border-l lg:border-ink/10" : ""}`}
+            <Reveal
+              key={s.lines.join(" ")}
+              delay={i * 60}
+              offset="list"
+              className={`flex flex-col items-center px-3 py-4 text-center ${
+                i > 0 ? "lg:border-l lg:border-ink/10" : ""
+              } ${i % 2 === 1 ? "border-l border-ink/10" : ""}`}
             >
-              <p className="font-display text-[32px] font-medium text-gold lg:text-[40px]">
-                {s.value}
+              <p
+                className="font-display text-[40px] font-medium leading-none tracking-tight text-gold lg:text-[48px]"
+                aria-label={`${s.end}${s.suffix}`}
+              >
+                <CountUp end={s.end} suffix={s.suffix} delay={i * 60} />
               </p>
-              <p className="mt-2 text-[13px] font-medium uppercase tracking-[0.18em] text-ink">
-                {s.label}
+              <p className="mt-6 text-[11px] font-medium uppercase leading-[1.35] tracking-[0.18em] text-ink">
+                {s.lines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>
