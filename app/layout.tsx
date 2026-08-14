@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   },
   description:
     "A first-generation family estate in the Yarra Valley. Wines crafted by nature, perfected by time.",
+  icons: {
+    icon: [
+      {
+        url: "/brand/martingale-mark.svg",
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {
