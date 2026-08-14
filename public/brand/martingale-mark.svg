@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 95" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="martingale-mark-gold" x1="0" y1="0" x2="96" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8f7741"/>
+      <stop offset="10%" stop-color="#cba735"/>
+      <stop offset="20%" stop-color="#f1d659"/>
+      <stop offset="32%" stop-color="#f7ed6a"/>
+      <stop offset="40%" stop-color="#f8ed60"/>
+      <stop offset="50%" stop-color="#f3d74e"/>
+      <stop offset="62%" stop-color="#deb738"/>
+      <stop offset="78%" stop-color="#d5ad30"/>
+      <stop offset="90%" stop-color="#cda62d"/>
+      <stop offset="100%" stop-color="#856f35"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 0 48 42 96 0 96 95H0Z" fill="url(#martingale-mark-gold)"/>
+</svg>

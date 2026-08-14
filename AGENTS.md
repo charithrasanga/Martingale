@@ -1,3 +1,7 @@
+# App folder
+
+Next.js app. Parent `AGENTS.md` and `docs/design-system/` are the contract. Read those before UI edits.
+
 <!-- BEGIN:nextjs-agent-rules -->
 
 # This is NOT the Next.js you know
