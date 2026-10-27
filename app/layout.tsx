@@ -62,8 +62,14 @@ export const metadata: Metadata = {
       },
     ],
   },
-  // Add JSON-LD structured data
-  other: {
+};
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Martingale Estate",
@@ -83,20 +89,20 @@ export const metadata: Metadata = {
       postalCode: "3753",
       addressCountry: "Australia",
     },
-  },
-};
+  };
 
-export const viewport: Viewport = {
-  viewportFit: "cover",
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={`${cormorant.variable} h-full subpixel-antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full bg-paper font-sans text-ink">
         <Script id="detect-js" strategy="beforeInteractive">
           {`document.documentElement.classList.add("js")`}
